@@ -30,17 +30,17 @@ part of pen;
       if (contentElement == null) return;
       content = contentElement.innerHtml;
       isSaved = true;
-      _render();
+      rendered = _render(content);
     }
 
-    void _render() {
+    static String _render(String content) {
       String text =
         content.replaceAll(
             new RegExp(r'(<br>)|(<br\s*\/>)|(<p>)|(<\/p>)'), '\r\n');
       Match m =
         new RegExp(r'\s*(<div>)*\s*\[\s*:markdown\s*:\s*\]\s*')
         .matchAsPrefix(text);
-      rendered = m == null ?
+      return m == null ?
         _renderAsHtml(text) : _renderAsMarkdown(text.substring(m.end));
     }
 
