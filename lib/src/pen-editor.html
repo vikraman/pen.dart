@@ -1,0 +1,8 @@
+<input type="button" ng-click="pen.onSave()" ng-if="!pen.isSaved"
+       value="Save"/>
+<div id="pen-content" contenteditable="true"
+     ng-bind-html-unsafe="pen.content" ng-if="!pen.isSaved">
+</div>
+<div id="pen-rendered" ng-doubleclick="pen.onEdit()"
+     ng-bind-html-unsafe="pen.rendered" ng-if="pen.isSaved">
+</div>

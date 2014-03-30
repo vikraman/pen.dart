@@ -1,0 +1,4 @@
+name: pen
+dependencies:
+  markdown: any
+  angular: any
